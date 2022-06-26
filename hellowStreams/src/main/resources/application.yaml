@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input-channel-1:
+          destination: users
+      kafka:
+        streams:
+          binder:
+            application-id: hellostreams
+            brokers: localhost:9092
+            configuration:
+              default:
+                key:
+                  serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+                value:
+                  serializer: org.apache.kafka.common.serialization.ByteArraySerializer
